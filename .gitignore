@@ -1,0 +1,5 @@
+/target/
+/src/main/resources/.vagrant/
+/.idea/
+sgd-autenticidadeSigilo.iml
+nb-configuration.xml
