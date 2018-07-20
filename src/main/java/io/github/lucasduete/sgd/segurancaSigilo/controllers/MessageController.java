@@ -31,7 +31,7 @@ public class MessageController {
         return true;
     }
 
-    public boolean receiveMessage(User sender, User receiver, String message) {
+    public String receiveMessage(User sender, User receiver, String message) {
 
         System.out.println("Chegou mensagem");
 
@@ -39,14 +39,13 @@ public class MessageController {
             byte[] temp1 = criptoController.decrypt(decodeText(message), receiver.getPrivateKey());
             byte[] plainText = criptoController.decrypt(temp1, sender.getPublicKey());
 
-            System.out.println(new String(plainText));
+            return new String(plainText);
 
         } catch (Exception ex) {
             ex.printStackTrace();
-            return false;
         }
 
-        return true;
+        return null;
     }
 
 }

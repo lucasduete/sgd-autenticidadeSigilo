@@ -40,7 +40,9 @@ public class User {
     }
 
     public void receiveMessage(User sender, String message) {
-        new MessageController().receiveMessage(sender, this, message);
+        String mensagem = new MessageController().receiveMessage(sender, this, message);
+
+        System.out.println(String.format("O usuário %s recebeu: \n%s", this.nome, mensagem));
     }
 
 }
