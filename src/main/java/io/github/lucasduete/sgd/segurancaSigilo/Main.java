@@ -9,6 +9,6 @@ public class Main {
         User user1 = new User("Lucas");
         User user2 = new User("Mayara");
 
-        new MessageController().sendMessage(user1, user2, "a");
+        new MessageController().sendMessage(user1, user2, "Te amo");
     }
 }

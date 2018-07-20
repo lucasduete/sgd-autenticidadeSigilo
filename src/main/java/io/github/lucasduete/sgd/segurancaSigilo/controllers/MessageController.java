@@ -33,11 +33,13 @@ public class MessageController {
 
     public boolean receiveMessage(User sender, User receiver, String message) {
 
+        System.out.println("Chegou mensagem");
+
         try {
             byte[] temp1 = criptoController.decrypt(decodeText(message), receiver.getPrivateKey());
             byte[] plainText = criptoController.decrypt(temp1, sender.getPublicKey());
 
-            System.out.println(plainText);
+            System.out.println(new String(plainText));
 
         } catch (Exception ex) {
             ex.printStackTrace();

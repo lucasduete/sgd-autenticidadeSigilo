@@ -6,6 +6,8 @@ import java.security.NoSuchAlgorithmException;
 
 public class RsaKeyGenerator {
 
+    private static final int KEYSIZE = 4096;
+
     public static final KeyPair generateKeypair() {
 
         KeyPairGenerator keyPairGenerator = null;
@@ -16,8 +18,16 @@ public class RsaKeyGenerator {
             return null;
         }
 
-        keyPairGenerator.initialize(2048);
+        keyPairGenerator.initialize(KEYSIZE);
 //        keyPairGenerator.initialize(1024);
         return keyPairGenerator.generateKeyPair();
+    }
+
+   public static final int getBlockSize() {
+        return (KEYSIZE/8) - 11;
+    }
+
+    public static final int getKeySize() {
+        return KEYSIZE/8;
     }
 }
